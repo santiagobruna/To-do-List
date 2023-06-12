@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-primaria: #2C3639;
+    --cor-secundaria: #3F4E4F;
+    --fonte-principal: 'Josefin Sans', sans-serif;
+    --fonte-secundaria: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--cor-primaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    color: white;
+}
+
+.titulo {
+    font-size: 20px;
+    margin: 1em 0 1em 0;
+    text-align: center;
+}
+
+.texto{
+    font-size: 18px;
+    margin: 1em 0 0 0;
+    text-align: center;
+}
+
+form{ 
+    text-align: center;
+    padding-top: 5em;
+}
+
+.input__nome{
+    width: 60%;
+    height: 30px;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.input__nome:hover {
+    -webkit-box-shadow: 0px -2px 6px 1px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px -2px 6px 1px rgba(0,0,0,0.68);
+    box-shadow: 0px -2px 6px 1px rgba(0,0,0,0.68);
+}
+
+.btn {
+    width: 25%;
+    height: 30px;
+    background-color: #22A699;
+    color: white;
+    border: 1px solid white;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid  #22A699; 
+}
+
+.lista {
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .titulo {    
+       margin: 4em 0 1em 0;
+    }
+
+    .container{
+        width: 80%;
+        margin: auto;
+    }
+        
+    .input__nome{
+        width: 40%;
+        height: 35px;
+    
+    }
+    .input__nome::placeholder {
+        font-size: 13px;
+        color: black;
+    }
+        
+    form{ 
+        text-align: center;
+        padding-top: 3em;
+    }
+
+
+    .btn {
+        width: 13%;
+        height: 35px;
+        margin-left: 10px;
+        background-color: #22A699;
+        color: white;
+        border: 1px solid white;
+    }
+
+}
+
+@media screen and (min-width: 1728px) {
+    .titulo {    
+        margin: 4em 0 1em 0;
+        font-size: 22px;
+     }
+
+    .texto{
+        font-size: 22px;
+     }
+ 
+     .container{
+        width: 50%;
+        margin: auto;
+     }
+         
+     .input__nome{
+        width: 30%;
+        height: 40px;
+     
+    }
+
+    .input__nome::placeholder {
+        font-size: 15px;
+        color: black;
+    }
+         
+    form{ 
+        text-align: center;
+        padding-top: 3em;
+    }
+ 
+    .btn {
+        width: 10%;
+        height: 40px;
+        margin-left: 10px;
+        background-color: #22A699;
+        color: white;
+        border: 1px solid white;
+    }
+}
