@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="assets/logo-list-desktop.svg" type="image/x-icon">
     <title>Lista de tarefas</title>
 </head>
-<body>  
+
+<body>
+    <img src="assets/logo-list-mobile.svg" alt="Ícone de Lista de Tarefas">
+    <div class="container__titulo">
         <h2 class="titulo">Ganhe tempo eliminando tarefas manuais</h2>
-        <div class="container">
-            <p class="texto">
-                Automatize tarefas repetitivas de rotina para se concentrar no trabalho importante. Faça gestão de tarefas, defina prazos de entrega e verifique status com rapidez. 📝   
-            </p>
-        </div>
-       
+    </div>
+
+    <div class="container">
+        <p class="texto">
+            Automatize tarefas repetitivas de rotina para se concentrar no trabalho importante. Faça gestão de tarefas,
+            defina prazos de entrega e verifique status com rapidez.
+        </p>
+    </div>
+
     <form action="" id="form" autocomplete="off">
-      <!--  <label for="nome">Nome</label>-->
+        <!--  <label for="nome">Nome</label>-->
         <input type="text" name="nome" id="nome" class="input__nome" placeholder="Digite a sua task:">
         <input type="submit" value="Adicionar" id="add" class="btn">
     </form>
     <ul id="lista" class="lista"></ul>
-    
-    <script src="js/main.js"></script>
+    <footer class="rodape">
+        <p class="texto-rodape">Desenvolvido por Bruna Carla</p>
+    </footer>
+    <script src="js/lista.js"></script>
 </body>
+
 </html>
