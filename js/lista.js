@@ -36,6 +36,7 @@ form.addEventListener('submit', (evento) => {
 
 })
 
+
 function criaElemento(item) {
     const novoItem = document.createElement('li');
     novoItem.classList.add('item');
@@ -43,39 +44,34 @@ function criaElemento(item) {
     novoItem.dataset.id = item.id;
     lista.appendChild(novoItem);
 
-    // Anexa os ícones ao novoItem, passando o id
-    novoItem.appendChild(taskFeita(item.id));
-    novoItem.appendChild(taskNaoFeito(item.id));
+    // Cria uma div para os ícones e adiciona ao novoItem
+    const divIcones = document.createElement('div');
+    divIcones.classList.add('icones');
+    novoItem.appendChild(divIcones);
 
+    // Adiciona os ícones às divs correspondentes
+    divIcones.appendChild(criarElementoTask(item.id, iconeSvgFeito + 'feito-desktop.svg', 'concluir'));
+    divIcones.appendChild(criarElementoTask(item.id, iconeSvgNaoFeito + 'nao-feito-desktop.svg', 'remover'));
 
 
 }
-
-function taskFeita(id) {
+function criarElementoTask(id, iconeSrc, acao) {
     const imagemElement = document.createElement('img');
-    imagemElement.src = iconeSvgFeito + 'feito-desktop.svg'
-    imagemElement.innerHTML = iconeSvgFeito;
+    imagemElement.src = iconeSrc;
+    
+    imagemElement.addEventListener('click', () => {
+        if (acao === 'concluir') {
+            alert('task concluída');
+            taskCompleta(id);
+        } else if (acao === 'remover') {
+            alert('task removida');
+            deleta(id);
+        }
+    });
 
-    imagemElement.addEventListener('click', (evento) => {
-        alert('task concluída');
-        taskCompleta(id);
-
-    })
-    return imagemElement
+    return imagemElement;
 }
 
-
-function taskNaoFeito(id) {
-    const imagemElement = document.createElement('img');
-    imagemElement.src = iconeSvgNaoFeito + 'nao-feito-desktop.svg'
-    imagemElement.innerHTML = iconeSvgNaoFeito;
-
-    imagemElement.addEventListener('click', (evento) => {
-        alert('task removida');
-        deleta(id);
-    })
-    return imagemElement
-}
 
 function taskCompleta(id) {
     const tag = document.querySelector(`[data-id="${id}"]`); // retorna o data-id do item na lista
